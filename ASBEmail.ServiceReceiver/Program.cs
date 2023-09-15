@@ -1,8 +1,12 @@
+using Microsoft.Azure.ServiceBus;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddSingleton<IQueueClient>();
 
 var app = builder.Build();
 
